@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/slawek_mac/CLionProjects/Temat6/main.cpp
+iostream
+-
+cstdlib
+-
+paczkomat.h
+/Users/slawek_mac/CLionProjects/Temat6/paczkomat.h
+
+/Users/slawek_mac/CLionProjects/Temat6/paczkomat.cpp
+paczkomat.h
+/Users/slawek_mac/CLionProjects/Temat6/paczkomat.h
+
+/Users/slawek_mac/CLionProjects/Temat6/paczkomat.h
+iostream
+-
+
