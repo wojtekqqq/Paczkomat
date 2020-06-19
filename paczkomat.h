@@ -12,31 +12,37 @@ class skrzynka{
 private:
     float wysokosc;
     float szerokosc;
+
 public:
     skrzynka(float wys, float szer){
         wysokosc = wys;
         szerokosc=szer;
     }
-    bool wloz_paczke(float wys, float szer);
+    bool wloz_paczke(float wys, float szer, int ID_skrzynki, bool status );
 };
 
 //-------------------------------------------------
-class paczkomat{
+class paczkomat {
 private:
     static const int ile_skrzynek = 12;
     skrzynka *wsk_skrz[ile_skrzynek];
-    bool zajeta [ile_skrzynek];
+    bool zajeta[ile_skrzynek];
 public:
-    paczkomat(){
+    paczkomat() {
         for (int i = 0; i < ile_skrzynek; ++i) {
             wsk_skrz[i] = NULL;
             zajeta[i] = false;
         }
     }
-    ~paczkomat(){
-            for (int i = 0; i < ile_skrzynek; ++i) {
-                delete[] wsk_skrz[i];
-                wsk_skrz[i] = NULL;
-            }
+
+    ~paczkomat() {
+        for (int i = 0; i < ile_skrzynek; ++i) {
+            delete[] wsk_skrz[i];
+            wsk_skrz[i] = NULL;
         }
+    }
+    void start_pacz(int ID_skrzynki, float wys, float szer);
+    void status_skrzynki(int ID_skrzynki, bool status);
+    bool wloz(int ID_skrzynki,float wysP, float szerP);
+    //void testuj();
 };
